@@ -1,0 +1,96 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Game Engine - Cartesian Scene</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="bottom-bar">
+            <div class="bottom-bar-handle" id="bottom-bar-touch-area">
+                <div class="bottom-bar-handle-icon">⋮</div>
+            </div>
+            <div class="bottom-bar-content">
+                <div class="bottom-bar-tabs">
+                    <button class="bottom-bar-tab active" data-tab="files">Arquivos</button>
+                    <button class="bottom-bar-tab" data-tab="gemini">Códigos Geminis</button>
+                    <button class="bottom-bar-tab" data-tab="assets">Assets</button>
+                </div>
+                <div class="bottom-bar-tab-content">
+                    <div class="tab-content files active">
+                        <div class="files-header">
+                            <h3>Arquivos do Projeto</h3>
+                            <button id="new-folder">+ Nova Pasta</button>
+                        </div>
+                        <div id="project-folders" class="folders-list">
+                            <!-- Project folders will be dynamically added here -->
+                        </div>
+                    </div>
+                    <div class="tab-content gemini">
+                        <h3>Códigos Geminis</h3>
+                        <div id="gemini-code-container">
+                            <button id="add-gemini-code">+ Novo Código Geminis</button>
+                        </div>
+                    </div>
+                    <div class="tab-content assets">
+                        <h3>Assets do Projeto</h3>
+                        <div id="project-assets">
+                            <button id="add-asset">+ Novo Asset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-menu">
+            <div class="three-dots-menu">
+                <div class="dropdown">
+                    <button class="dropdown-btn">...</button>
+                    <div class="dropdown-content">
+                        <a href="https://example.com/save">Salvar</a>
+                        <a href="https://example.com/save-as">Salvar Como</a>
+                        <a href="https://example.com/new-project">Criar Novo</a>
+                        <a href="https://example.com/import">Importar</a>
+                        <a href="https://example.com/export">Exportar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-workspace">
+            <div class="left-sidebar">
+                <div class="items-header">
+                    <h3>Itens na Cena</h3>
+                    <button id="add-item">+ Novo Item</button>
+                </div>
+                <div class="items-list" id="scene-items">
+                    <!-- Scene items will be dynamically added here -->
+                </div>
+            </div>
+            
+            <div class="cartesian-scene">
+                <svg id="cartesian-plane" viewBox="-500 -500 1000 1000">
+                    <line x1="-50000" y1="0" x2="50000" y2="0" stroke="red" stroke-width="2"/>
+                    <line x1="0" y1="-50000" x2="0" y2="50000" stroke="blue" stroke-width="2"/>
+                    
+                    <!-- X-axis markers -->
+                    <g id="x-axis-markers"></g>
+                    
+                    <!-- Y-axis markers -->
+                    <g id="y-axis-markers"></g>
+                </svg>
+            </div>
+            
+            <div class="right-sidebar">
+                <h3>Propriedades do Item</h3>
+                <div id="item-properties">
+                    <p>Selecione um item para ver suas propriedades</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
